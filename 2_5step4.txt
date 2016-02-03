@@ -1,0 +1,76 @@
+オブジェクト指向確認問題
+1.1
+Integer
+String
+TRUEクラス
+Date
+Time
+Array
+Integer
+Hash
+String
+
+1.2
+Article
+Article
+CommentのArray
+ArticleのArray
+User
+
+2.1
+def initialize(title)
+	self.title = title
+	end
+
+	def rename_title(title)
+	self.title = title
+end
+
+2.2
+class Book
+	attr_accessor: :title
+	attr_accessor: :price
+
+	def initialize(title)
+	  self.title = title
+	end
+
+	def rename_title(title)
+ 		self.title = title
+	end
+
+	def price_increase
+		self.price = self.price * 2
+	end
+end
+
+2.3
+class Comic < Book
+	def price_increase
+		self.price = self.price * 1.5
+	end
+end
+
+class Magazine < Book
+	def price_increase
+		self.price = self.price * 3
+	end
+end
+
+3.1
+all
+find
+update
+
+params
+
+3.2
+allはプロジェクトクラスのクラスメソッド
+findはプロジェクトクラスのクラスメソッド
+updateはプロジェクトクラスのインスタンスメソッド
+
+paramsはApplicationControllerクラスのインスタンスメソッド
+
+3.3
+ProjectのスーパークラスであるActiveRecordにallというメソッドが定義されているため。
+
