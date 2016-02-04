@@ -1,3 +1,6 @@
+問題URL
+http://qiita.com/geshi/private/1180e0f4c6a0a828f46a
+
 1.以下のメソッドについて説明しなさい
 resources
 引数の名前のテーブルへのcrudに対応した7つのルーティングを作成する。

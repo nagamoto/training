@@ -1,3 +1,6 @@
+問題URL
+http://qiita.com/geshi/private/78dfd0b4efcbcff0eef2
+
 1.Rake,DSL,汎用プログラミング言語を調査し、説明せよ
 ・Rake
 makeなどビルドツールの一種。Rubyで書かれている。
@@ -18,9 +21,28 @@ makeなどビルドツールの一種。Rubyで書かれている。
 
 2.各rakeの目的
 rake db:migrate
-DBのskime。
+スクリプトによってテーブルの作成やカラム構成などを行う。作業を自動化することも大きい。
+DBの種類によらないことも重要。
+migrationファイルを時系列で読み込むためある時点のDBを再現することもできる。
 rake db:create
-DB内にテーブル作成を行う。
+主にテーブル作成を行うため。
+database.ymlの内容でデータベースを作る。
 rake db:migrate:reset
+作成したDBの破棄、再生性、再構築を行う。
+drop、create、migrate全てやる。
 rake db:drop
+DBを破棄する
+createの逆。
 
+3.
+namespace :rake_finc do
+  desc "rake finc"
+  task rake_finc: :environment do
+    p "FiNC"
+    p "FiNC"
+    p "FiNC"
+    p "FiNC"
+    p "FiNC"
+  end
+
+end

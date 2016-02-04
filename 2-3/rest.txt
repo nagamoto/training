@@ -1,3 +1,6 @@
+問題URL
+http://qiita.com/geshi/private/d0414f3874d0234a70d2
+
 1.
 /users #index GET 一覧画面を生成
 /users/:id #show GET 詳細画面を生成

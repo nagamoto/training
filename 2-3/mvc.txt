@@ -1,3 +1,6 @@
+問題URL
+http://qiita.com/geshi/private/126a50ea661841a69f32
+
 1.MVCのメリット
 自己認識：
 model、view、controller役割ごとにわけることで、プログラムそれぞれが他のプログラムへの依存度を低くすることができる
