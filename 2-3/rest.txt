@@ -1,0 +1,35 @@
+1.
+/users #index GET 一覧画面を生成
+/users/:id #show GET 詳細画面を生成
+/users/new #new GET 新規作成用画面を生成
+/users #create POST 新規作成
+/users/:id/edit #edit GET データ更新用画面を生成
+/users/:id #update PUT データ更新
+/users/:id #destroy DELETE データ削除
+
+2.
+Create リソースの作成 POST
+Read リソースの読み込み GET
+Update リソースの更新 PUT()
+Destroy リソースの削除 DELETE
+
+3.
+コメント一覧
+/articles/:id/comments
+#index
+
+記事を書く画面
+/articles/new
+#new
+
+記事の新規作成
+/articles/create
+#create
+
+ユーザ詳細
+/users/:id
+#show
+
+記事削除
+/articles/:id
+#destroy

@@ -1,0 +1,62 @@
+1.以下のメソッドについて説明しなさい
+resources
+引数の名前のテーブルへのcrudに対応した7つのルーティングを作成する。
+オプションなどカスタマイズも可能
+
+collection
+httpメソッド名とそれに対応するアクションを記入することで、
+基本の7つ以外のルーティングをリソースに追加する。
+すべてのデータが対象。
+member
+collectionと似ており、ルーティングを追加する。特定のデータが対象。
+特定のデータが対象というのは、/:idがつくものである。
+
+namespace
+多数のコントローラを名前空間によってまとめる。
+adminによく用いられる。
+
+2.指定のURIルーティングを以下に定義せよ
+会社詳細参考
+https://www.wantedly.com/companies/finc
+プロジェクト一覧参考
+https://www.wantedly.com/projects
+プロジェクト詳細参考
+https://www.wantedly.com/projects/21376?ql=gaJpZM4ADiZ9
+
+Rails.application.routes.draw
+	resources :companies, :only => [:show]
+	resources :projects, :only => [:index, :show]
+end
+
+3.会社ランキング/プロジェクト応援のルーティングを以下に定義しなさい
+会社ランキング参考
+https://www.wantedly.com/companies/ranking
+プロジェクト応援
+projectモデルの、like_countを増やすためのルーティング
+
+Rails.application.routes.draw
+	resources :companies do
+		collection do	
+			get 'ranking'
+		end
+	end
+
+	resources :projects do
+		resouces :like_counts
+	end
+
+end
+
+4.以下のURIルーティングを定義しなさい
+会社新規作成画面
+/admin/companies/:id/new(GET)
+会社新規作成
+/admin/companies(POST)
+会社編集
+/admin/companies/:id(PUT)
+会社削除
+/admin/companies/:id(DELETE)
+
+Rails.application.routes.draw
+	resources :companies, :exept => [:show, :edit, :create]
+end
