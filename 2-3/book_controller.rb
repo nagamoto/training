@@ -1,17 +1,11 @@
 class BookController < ApplicationController
-  scope :find_by_id, ->(id) { where("id = ?", id) }
-  before_save :redirect_to_root_path
-
-  def redirect_to_root_path
-    redirect_to root_path
-  end
+  before_action :find_book, only: [:show, :edit ]
 
   def index
     @books = Book.all
   end
 
   def show
-    @book = Book.find_by_id(params[:id])
   end
 
   def new
@@ -19,24 +13,34 @@ class BookController < ApplicationController
   end
 
   def create
-    book = Book.new(params[:book].permit(:title, :author))
+    book = Book.new(book_params)
     book.save
     redirect_to root_path
   end
 
   def edit
-    @book = Book.find_by_id(params[:id])
   end
 
   def update
-    book = Book.find_by_id(params[:id])
-    book.update(params[:book].permit(:title, :author))
+    book = Book.find(params[:id])
+    book.update(book_params)
     redirect_to root_path
   end
 
   def destroy
-    book = Book.find_by_id(params[:id])
+    book = Book.find(params[:id])
     book.destroy
     redirect_to root_path
   end
+
+  private
+
+    def find_book
+      @book = Book.find(params[:id])
+    end
+
+    def book_params
+      params.require(:book).permit(:title, :author)
+    end
+
 end

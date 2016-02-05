@@ -19,20 +19,25 @@ Destroy リソースの削除 DELETE
 3.
 コメント一覧
 /articles/:id/comments
+GET
 #index
 
 記事を書く画面
 /articles/new
+GET
 #new
 
 記事の新規作成
 /articles/create
+POST
 #create
 
 ユーザ詳細
 /users/:id
+GET
 #show
 
 記事削除
 /articles/:id
+DELETE
 #destroy
