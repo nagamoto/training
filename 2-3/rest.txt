@@ -28,7 +28,7 @@ GET
 #new
 
 記事の新規作成
-/articles/create
+/articles
 POST
 #create
 

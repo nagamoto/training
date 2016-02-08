@@ -1,5 +1,5 @@
 class BookController < ApplicationController
-  before_action :find_book, only: [:show, :edit ]
+  before_action :set_book, only: [:show, :edit ]
 
   def index
     @books = Book.all
@@ -14,8 +14,12 @@ class BookController < ApplicationController
 
   def create
     book = Book.new(book_params)
-    book.save
-    redirect_to root_path
+    if (book.save)
+      redirect_to root_path
+      exit
+    end
+    @notice = "保存に失敗しました。"
+    redirect_to new_book_path
   end
 
   def edit
@@ -35,7 +39,8 @@ class BookController < ApplicationController
 
   private
 
-    def find_book
+    def set_book
+      raise if params[:id].blank
       @book = Book.find(params[:id])
     end
 
